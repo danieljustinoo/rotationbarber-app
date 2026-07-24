@@ -1,0 +1,38 @@
+{
+  "name": "rotationbarber-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "api": "node --watch server/index.js",
+    "dev": "vite --host 0.0.0.0 --port 5180 --strictPort",
+    "build": "vite build",
+    "build:ios": "VITE_API_BASE_URL=http://$(ipconfig getifaddr en0):5181 vite build",
+    "sync:ios": "npm run build:ios && cap sync ios",
+    "open:ios": "cap open ios",
+    "run:ios": "DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer cap run ios",
+    "run:ios:live": "DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer cap run ios --live-reload --host $(ipconfig getifaddr en0) --port 5180",
+    "sim:ios": "open -a Simulator",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@capacitor/core": "^8.4.1",
+    "@capacitor/ios": "^8.4.1",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "lucide-react": "^1.23.0",
+    "mysql2": "^3.22.6",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.4.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "oxlint": "^1.71.0",
+    "vite": "^8.1.1"
+  }
+}

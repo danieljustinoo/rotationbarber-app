@@ -1,0 +1,8 @@
+{
+  "appId": "com.rotationbarber.app",
+  "appName": "Rotation Barber",
+  "webDir": "dist",
+  "server": {
+    "cleartext": true
+  }
+}
